@@ -11,12 +11,21 @@
 
 <ion-content>
   <h3>Validation view page</h3>
-    <div style="margin:5px 0;font-weight:600;">Single select example</div>
-    <ion-item>
-      <ion-label>Parents</ion-label>
-        <ion-select [(ngModel)]="gender">
-        <ion-option value="f" selected="true">Female</ion-option>
-        <ion-option value="m">Male</ion-option>
-      </ion-select>
-    </ion-item>
+  <ion-item>
+    <ion-label color="primary">Text</ion-label>
+    <ion-input placeholder="Text Input" #name></ion-input>
+  </ion-item>
+  <p>Le text : {{name.value}}</p>
+  <div style="margin:5px 0;font-weight:600;">Single select example</div>
+  <ion-item>
+    <ion-label>Parents</ion-label>
+    <ion-select [(ngModel)]="gender">
+      <ion-option value="f" selected="true">Female</ion-option>
+      <ion-option value="m">Male</ion-option>
+    </ion-select>
+  </ion-item>
+  <button (click)="onButtonClick()">Click me!</button>
+  <ion-item>
+    <p>List : {{list()}}</p>
+  </ion-item>
 </ion-content>

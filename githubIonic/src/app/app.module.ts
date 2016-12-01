@@ -5,6 +5,9 @@ import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
 import { ValidationPage } from '../pages/validation/validation';
+import { listService } from '../pages/validation/listService';
+import { DiabloPage } from '../pages/diablo/diablo';
+import { diabloList } from '../pages/diablo/diabloList';
 
 @NgModule({
   declarations: [
@@ -12,7 +15,10 @@ import { ValidationPage } from '../pages/validation/validation';
     HelloIonicPage,
     ItemDetailsPage,
     ListPage,
-    ValidationPage
+    ValidationPage,
+    listService,
+    DiabloPage,
+    diabloList
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -23,8 +29,12 @@ import { ValidationPage } from '../pages/validation/validation';
     HelloIonicPage,
     ItemDetailsPage,
     ListPage,
-    ValidationPage
+    ValidationPage,
+    listService,
+    DiabloPage,
+    diabloList
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}
+  ]
 })
 export class AppModule {}
