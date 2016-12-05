@@ -8,6 +8,7 @@ import { ValidationPage } from '../pages/validation/validation';
 import { listService } from '../pages/validation/listService';
 import { DiabloPage } from '../pages/diablo/diablo';
 import { diabloList } from '../pages/diablo/diabloList';
+import { HttpModule, JsonpModule } from '@angular/http';
 
 @NgModule({
   declarations: [

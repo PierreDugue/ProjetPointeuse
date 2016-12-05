@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Response } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
+
 import 'rxjs/add/operator/map';
 
 /*
@@ -10,9 +12,19 @@ import 'rxjs/add/operator/map';
 */
 @Injectable()
 export class DiabloService {
-
+  private blizzardApiURL = 'https://eu.api.battle.net/d3/profile/piloubegood%232987/?locale=en_GB&apikey=n75p34uvzps72cy3ajsfchpxfmngr6n9';
   constructor(public http: Http) {
-    console.log('Hello DiabloService Provider');
-  }
+  };
 
+  getProfile() {
+    let userProfile;
+    try {
+      return this.http.get(this.blizzardApiURL);
+    }
+    catch (e) {
+      if (e instanceof RangeError) {
+        console.log('out of range');
+      }
+    }
+  }
 }

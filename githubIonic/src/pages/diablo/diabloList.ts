@@ -1,6 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { DiabloPage } from './diablo';
+import { DiabloService } from '../../providers/diablo-service';
+
 
 /*
   Generated class for the Diablo page.
@@ -10,13 +12,20 @@ import { DiabloPage } from './diablo';
 */
 @Component({
     selector: 'diablo-list',
-    template: '<ion-item>' +
-    '<p>Test de Model : {{model}}</p>' +
+    template:
+    '<p>Infos profile {{model}}</p>' +
+    '<ion-item>' +
+    '<p>BattelTag : {{model?.battleTag}}</p>' +
+    '<p>Paragon level : {{model?.paragonLevel}}</p>' +
+    '<ul><li *ngFor="let row of model?.heroes">{{row.name}}</li></ul>' +
     '</ion-item>',
-    providers: [{ provide: DiabloPage, useClass: DiabloPage }]
+    providers: [{ provide: DiabloPage, useClass: DiabloPage },
+        DiabloService]
 })
 export class diabloList {
     @Input() model;
-    constructor(public navCtrl: NavController) { }
+    
+    constructor(public navCtrl: NavController) {
+    }
 
 }
