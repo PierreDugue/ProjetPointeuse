@@ -12,7 +12,6 @@
 
 </ion-header>
 
-
 <ion-content padding>
   <h1>Stats Diablo</h1>
   <ion-item>
@@ -21,7 +20,7 @@
   </ion-item>
   <button ion-button (click)="onButtonClick(tag.value)">Search</button>
   <ion-item>
-    <diablo-list [model]= "userProfile">
+    <diablo-list [model]="userProfile">
     </diablo-list>
   </ion-item>
 

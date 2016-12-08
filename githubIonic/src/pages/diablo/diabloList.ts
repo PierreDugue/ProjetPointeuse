@@ -24,7 +24,7 @@ import { DiabloService } from '../../providers/diablo-service';
 })
 export class diabloList {
     @Input() model;
-    
+
     constructor(public navCtrl: NavController) {
     }
 

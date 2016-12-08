@@ -16,17 +16,17 @@ import { Observable } from 'rxjs/Rx';
     DiabloService]
 })
 export class DiabloPage {
+  
   private userProfile;
   constructor(public navCtrl: NavController,
     private diabloService: DiabloService) {
   }
 
   onButtonClick(value: String) {
-    this.userProfile = this.diabloService.getProfile().catch(err => {
+    this.userProfile = this.diabloService.getProfile(value).catch(err => {
       return Observable.throw(err);
     }).subscribe(response => {
       this.userProfile = response.json();
-      console.log(this.userProfile);
     });
   }
 }
